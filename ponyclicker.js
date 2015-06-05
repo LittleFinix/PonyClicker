@@ -177,7 +177,7 @@ var ponyclicker = (function(){
   // Calculates a poisson distribution, which is useful for countering the SPS/cost ratio dip at the beginning of the cost function. Beyond n > 40 the function begins returning values on the order of 0.00000000001, so we just set it to 0 to prevent underflow errors.
   function poisson(n,L) { return n>40?0:Math.pow(L,n)*Math.exp(-L)/factorial(n); }
   function default_cost(i, n) { return Store[i].initcost*Math.pow(Store[i].costcurve,n)*(1+poisson(n+3,14)*5); }
-
+  /*
   Store[0].cost = fn_cost0;
   Store[1].cost = fn_cost1;
   Store[2].cost = function(n) { return default_cost(2, n); };
@@ -190,6 +190,19 @@ var ponyclicker = (function(){
   Store[9].cost = function(n) { return default_cost(9, n); };
   Store[10].cost = function(n) { return default_cost(10, n); };
   Store[11].cost = function(n) { return default_cost(11, n); };
+  */
+  Store[0].cost = function(n) { return 1; };
+  Store[1].cost = function(n) { return 1; };
+  Store[2].cost = function(n) { return 1; };
+  Store[3].cost = function(n) { return 1; };
+  Store[4].cost = function(n) { return 1; };
+  Store[5].cost = function(n) { return 1; };
+  Store[6].cost = function(n) { return 1; };
+  Store[7].cost = function(n) { return 1; };
+  Store[8].cost = function(n) { return 1; };
+  Store[9].cost = function(n) { return 1; };
+  Store[10].cost = function(n) { return 1; };
+  Store[11].cost = function(n) { return 1; };
   
   //
   // -------------------------------- Game Loading and Settings --------------------------------
